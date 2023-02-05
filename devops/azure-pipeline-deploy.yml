@@ -5,7 +5,7 @@ trigger:
 
 variables: 
   - name: webAppName
-    value: 'yevhen-ui-lectures2'
+    value: 'soloma-angular-webapp'
   - name: builderCounter
     value: $[counter('buildCounter', 1)]
 
@@ -57,7 +57,7 @@ stages:
   - deployment: "sandbox"
     pool: 
       vmImage: windows-2022
-    environment: lecture
+    environment: soloma-app1
     strategy:
       runOnce:
         deploy:
@@ -76,5 +76,5 @@ stages:
               appType: webApp
               appName: $(webAppName)
               package: '$(System.DefaultWorkingDirectory)/**/*.zip'
-              resourceGroupName: test
+              resourceGroupName: Test-Lecture1
               
